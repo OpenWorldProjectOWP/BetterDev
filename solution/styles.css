@@ -22,160 +22,135 @@
 
 /* resetting the body's rules and adding a background color. */
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   padding: 0;
   box-sizing: border-box;
   background-color: var(--cream);
+  margin: 0;
 }
 
-/* Setting styles to the h1 tag. Included variables from the root. */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 h1 {
-  font-family: var(--general);
-  font-weight: 500;
-  font-size: 14px;
-  color: var(--Dark-grayish-blue);
-  margin-bottom: 0;
-  letter-spacing: 0.3rem;
-}
-
-/* Setting styles to the h2 tag. Included variables from the root. */
-h2 {
+  margin: 0;
   font-family: var(--fancy);
+  color: var(--Very-dark-blue);
   font-weight: 700;
-  font-size: 50px;
-  margin-bottom: 0;
-  margin-top: 5px;
+  font-size: 37px;
 }
 
-/* used to control a specific text inside of the <p> that lists pricing. */
-em {
-  text-decoration: line-through;
-  font-style: normal;
+h2 {
+  margin-top: 30px;
+  font-family: var(--general);
+  color: var(--Dark-grayish-blue);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5em;
 }
 
-/* Set basic styles to all <p>. Uses variables from the root. */
 p {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 0;
   font-family: var(--general);
   font-size: var(--paragraph);
   font-weight: 500;
+  color: var(--Dark-grayish-blue);
+  line-height: 1.5em;
 }
 
-/* used to control a specific text inside of the <p> that lists pricing. Uses variables from the root. */
 strong {
-  margin-right: 10px;
   font-family: var(--fancy);
   font-weight: 700;
-  color: var(--Dark-cyan);
   font-size: 30px;
+  color: var(--Dark-cyan);
+  margin-right: 10px;
 }
 
-/* Adding styles to the cart button. Uses variables from the root. */
 button {
-  border: none;
-  border-radius: 8px;
-  width: 70%;
-  font-size: 15px;
+  display: block;
+  width: 80%;
+  margin-top: 10px;
+  height: 40px;
+  border-radius: 5px;
+  border-color: var(--Dark-cyan);
+  background-color: var(--Dark-cyan);
   text-align: center;
   color: var(--white);
-  background-color: var(--Dark-cyan);
-  height: 40px;
+  font-family: var(--general);
+  font-weight: 700;
 }
 
-/* Controls styling of the button's background color when a user hovers over it. Uses variables from the root. */
-button:hover {
-  background-color: var(--Very-dark-blue);
+footer {
+  position: absolute;
+  margin-top: 690px;
+  margin-bottom: 0;
+  font-size: 12px;
 }
 
-/* Placing a margin on the right side of the shopping cart svg inside of the cart button. */
+.container1 {
+  background-image: url(/image-product-desktop.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.container2 {
+  background-color: var(--white);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.container2 h1,
+h2,
+p,
+strong,
+button {
+  margin-left: 30px;
+  margin-bottom: 8px;
+}
+
+.container1,
+.container2 {
+  height: 400px;
+  width: 300px;
+}
+
+.sr-only {
+  display: none;
+}
+
 .svg {
   margin-right: 10px;
 }
 
-/* Setting basic styles to main container. */
-.container {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-/* Setting more restrictive rules to the sub-container. */
-.content {
-  display: flex;
-  width: 45%;
-  margin-top: 10%;
-}
-
-/* Basic styles for the left side of the content. */
-.card1 {
-  display: flex;
-}
-
-/* More specific styling to the left side of the content. */
-.card1 img {
-  width: 100%;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-}
-
-/* General Layout for the right side of the content. */
-.card2 {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  background-color: var(--white);
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-
-/* Styles the product description separate from the other <p>. */
-.text {
-  font-family: var(--general);
-  font-weight: 500;
-  color: var(--Dark-grayish-blue);
-  font-size: 27px;
-}
-
-/* Adding rules for the mobile version of the challenge. */
-@media only screen and (max-width: 376px) {
-  /* Adjusting the main container to appear vertically. */
-  .content {
-    display: flex;
+@media only screen and (max-width: 601px) {
+  main {
     flex-direction: column;
-    width: 90%;
   }
 
-  /* slight changes to height and which corners are rounded. */
-  .card1 img {
-    height: 350px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+  .container1 {
+    background-image: url(/image-product-mobile.jpg);
+    height: 300px;
+    margin-top: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     border-bottom-left-radius: 0;
   }
 
-  /* slight changes to width and which corners are rounded. */
-  .card2 {
-    width: 88%;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+  .container2 {
+    margin-bottom: 10px;
     border-top-right-radius: 0;
-  }
-
-  /* Adjusting product name sizing. */
-  h2 {
-    font-size: 30px;
-  }
-
-  /* Adjusting product description text size and margin. */
-  .text {
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-
-  /* Adjusting the main layout of the button itself */
-  button {
-    width: 100%;
-    height: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 }
+
